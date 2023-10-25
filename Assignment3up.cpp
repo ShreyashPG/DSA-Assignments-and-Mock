@@ -178,7 +178,38 @@ float evaluate(string postfix, int n, struct function arr[])
 		i++;
 	}
 	return f.peep();
+	
 }
+void infix2Prefix(string infix)
+{ int l=infix.length()-1;
+  string rev;
+	for(int i=l;i>=0;i--)
+	{
+		rev+=infix[i];
+	}
+
+	
+	cout<<endl;
+	for (int j=0;j<=l;j++)
+	{
+		if(rev[j]==')'){
+			rev[j]==')';
+		}
+		else if(rev[j]==')'){
+			rev[j]=='(';
+		}
+		cout<<rev[j];
+		
+	}cout<<endl;
+	cout<<"after the reverse bracket"<<endl;
+	for(int i=0;i<=l;i++)
+	{
+		cout<<infix[i];
+	}
+	
+}
+
+
 
 int main()
 {
@@ -187,25 +218,20 @@ int main()
 	cout<<"Enter the number of operands prestent in the infix expression : ";
 	cin>>k;
 	struct function arr[k];
-	for(int i=0; i<k; i++)
-	{
-		cout<<" Enter the variable: ";
-		cin>>arr[i].var;
-		cout<<"Enter value of variable: ";
-		cin>>arr[i].val;
-	}
+	
 	
 
 	string infix;
 	cout<<"Enter Infix Expression : ";
 	cin>>infix;
+	infix2Prefix( infix);
 
 	
-	string pstfix = infix2Postfix(infix);
+	/*string pstfix = infix2Postfix(infix);
 	cout<<"Postfix Expression is : "<<pstfix<<endl;
 
 	//evaluate the postfix expression
-	cout<<evaluate(pstfix,k, arr);
+	cout<<evaluate(pstfix,k, arr);*/
 
 	return 0;
 }
